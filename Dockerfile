@@ -28,4 +28,5 @@ RUN buildDeps='curl gcc libc6-dev libpcre3-dev libssl-dev make' \
 	&& apt-get purge -y --auto-remove $buildDeps
 	
 COPY haproxy.cfg /usr/local/etc/haproxy/haproxy.cfg
+EXPOSE 443
 CMD ["haproxy", "-f", "/usr/local/etc/haproxy/haproxy.cfg"]
